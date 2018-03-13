@@ -8,7 +8,7 @@ Some of the enviorments in AI-gym use a physic engine.
 To use cool enviorments such as [ant-v2](https://gym.openai.com/envs/#mujoco), bipedal locomotion, and the (new robotic arm enviorments for AI-gym)(https://blog.openai.com/ingredients-for-robotics-research/), you need your mujoco-py which lets your python to comunicate with the C++ code that runs the physic engine.
 
 
-#Setup
+# Setup
 Here i show how you get mujoco, mujoco-py and gym to work together in your enviorment. This shows setup for Windows OS, but i dont expect the other operating systems to be very diffrent.
 
 **Visual studio 2017**,
