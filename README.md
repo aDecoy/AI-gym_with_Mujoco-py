@@ -1,14 +1,14 @@
 # AI-gym_with_Mujoco-py
 Here I show how to setup your enviorment to run AI-gym enviorments that use the physic engine Mujoco. This was a pain to get working on windows, so this repository will have a setup guide and an example on how to learn to walk.
-
+Under construction.
 
 
 AI gym is a library for machine learning, with where you can try to make your model play games, learn to walk, solve a cube etc.
 Some of the enviorments in AI-gym use a physic engine.
-To use cool enviorments such as [ant-v2](https://gym.openai.com/envs/#mujoco), bipedal locomotion, and the (new robotic arm enviorments for AI-gym)(https://blog.openai.com/ingredients-for-robotics-research/), you need your mujoco-py which lets your python to comunicate with the C++ code that runs the physic engine.
+To use cool enviorments such as [ant-v2](https://gym.openai.com/envs/#mujoco), bipedal locomotion, and the [new robotic arm enviorments for AI-gym](https://blog.openai.com/ingredients-for-robotics-research/), you need your mujoco-py which lets your python to comunicate with the C++ code that runs the physic engine.
 
 
-# Setup
+## Setup
 Here i show how you get mujoco, mujoco-py and gym to work together in your enviorment. This shows setup for Windows OS, but i dont expect the other operating systems to be very diffrent.
 
 **Visual studio 2017**,
@@ -49,7 +49,7 @@ pip install gym
 pip install mujoco-py
 
 
-For mujoco-py to work we need the enviorment to be able to find vcvarsall.bat and cl.exe
+For mujoco-py to work we need the enviorment to be able to find vcvarsall.bat and cl.exe. This was maybe my biggest problem when installing, but when you know of them, it goes very fast.
 
 **vcvarsall.bat**
 Mujoco-py needs to be able to find the "vcvarsall.bat" file. It looks for it in the enviorment variables. If you dont know where it is, just search in C:\Program Files (x86)\Microsoft Visual Studio\2017\ for vcvarsall
@@ -79,3 +79,18 @@ Navigate to the tests that comes with the mujoco-py. Run the test_builder to get
 
 Congratulation, your first step in world domination by a machine army is done. You now need to find out how to make robots learn to walk. This is what we will do next.
 It should be a good example of how you can use the AI-gym enviorment.
+
+
+## Learn to walk
+We will use the ant-v1 enviorment to learn a quadroped to walk. To do this we will use a clever evolutionary algorithm proposed by OpenAI [here], and implemented in python by [(...)](githublocation). This means that you dont actually need to know any of the matematics of
+
+pip install evostra
+
+He did not comment a lot, but his code is quite easy to read. the main program crates an Agent. The Agent class has the save, load, train, predict,run, functions already build. You only need to tell it what model to use. The model class is a Neural Network.
+
+
+
+
+
+
+
