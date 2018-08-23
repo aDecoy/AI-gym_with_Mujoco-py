@@ -31,6 +31,10 @@ In the explorer simply copy paste the mjpro150 folder you downloaded into your "
 To make it work put the "mjkey.txt" you got on email into the \.mujoco\mjpro150\bin folder.
 For mujoco-py which we will use later, also put the key in the \.mujoco\ folder.
 
+
+
+
+
 *Test that mujoco works*
 From the bin folder, start "simulate.exe". This gives you an empty window with text that tells you to copy models into it.
 Go to the models/ folder and drag "humanoid100" file into the mujoco window. It should now show you a human ragdoll and other objects falling to the ground in an physic enviorment
@@ -48,10 +52,12 @@ Now we install all the fun stuff we need.
 type: conda install pip
 pip install --upgrade pip
 pip install gym
-pip install mujoco-py
+pip install mujoco-py    (I now recomend downloading from git and running setup.py instead)
 
 
 For mujoco-py to work we need the enviorment to be able to find vcvarsall.bat and cl.exe. This was maybe my biggest problem when installing, but when you know of them, it goes very fast.
+
+(note: this seems to not be needed anymore, maybe becasue of Windows 10 SDK (10.0.16299.0) for Desktop C++. You will get an error with io.h whithout it, and it also seems to fix some other stuff for us i suspect. Not sure this is what did it. See https://stackoverflow.com/questions/40018405/cython-cannot-open-include-file-io-h-no-such-file-or-directory/40810172 )
 
 **vcvarsall.bat**
 Mujoco-py needs to be able to find the "vcvarsall.bat" file. It looks for it in the enviorment variables. If you dont know where it is, just search in C:\Program Files (x86)\Microsoft Visual Studio\2017\ for vcvarsall
@@ -70,6 +76,13 @@ For me this file was found in C:\Program Files (x86)\Microsoft Visual Studio\201
 This might be diffrent depending on you machine configurations. If it is not there just search for it in the explorer.
 Let your omputer know where to look for building C++ code with visual studio 2017
 
+I needed to do this also
+https://github.com/openai/mujoco-py/blob/master/.appveyor.yml#L16-L32, Look at "install:" and do     
+- pip install -r requirements.txt
+- pip install -r requirements.dev.txt
+Maybe also some of the other stuff here
+
+If it does not work and it is asking for an io.h,  clone https://github.com/openai/mujoco-py git and run python setup.py install
 
 
 **Test Mujoco-py**
